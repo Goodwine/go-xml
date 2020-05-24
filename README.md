@@ -31,6 +31,8 @@ definition, where even panicking is OK.
 * `decodeElement`
 * Optionally decode html entities like `&quot;` or `&lt;`
 * Better error handling - currently assumes proper format with only a few validations
+* Namespaces, only simple tag/attribute names are supported
+* Catch mismatching start/close tags.
 
 ## Comparison
 
@@ -55,21 +57,20 @@ as it's received.
 ### benchstat
 
 Reading an XML Message Bundle with 75k entries (30MB). Comparing `encoding/xml` with the tricks
-AND patching the performance improvement proposals vs `go-xml`.
-
-Note: Unmarshalling was done manually, according to pprof the allocations were roughly 1:1 with
-the XML file size, the rest of the resources are the manual unmarshalling which was done the
-same way for both.
+AND patching the performance improvement proposals mentioned above vs `go-xml`.
 
 ```
-name          old time/op    new time/op    delta
-Unmarshal-16     662ms ± 4%     470ms ± 4%  -28.98%  (p=0.008 n=5+5)
+name                       time/op
+DecodeAll/go-xml-16         398ms ± 1%
+DecodeAll/encoding/xml-16   452ms ± 2%
 
-name          old alloc/op   new alloc/op   delta
-Unmarshal-16     280MB ± 0%      83MB ± 0%  -70.29%  (p=0.016 n=4+5)
+name                       alloc/op
+DecodeAll/go-xml-16        18.1MB ± 0%
+DecodeAll/encoding/xml-16  76.9MB ± 0%
 
-name          old allocs/op  new allocs/op  delta
-Unmarshal-16     5.03M ± 0%     1.58M ± 0%  -68.50%  (p=0.008 n=5+5)
+name                       allocs/op
+DecodeAll/go-xml-16          676k ± 0%
+DecodeAll/encoding/xml-16   1.99M ± 0%
 ```
 
 ## Code of Conduct
