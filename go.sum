@@ -1,0 +1,6 @@
+github.com/google/go-cmp v0.5.0 h1:/QaMHBdZ26BB3SSst0Iwl10Epc+xhTquomWX0oZEB6w=
+github.com/google/go-cmp v0.5.0/go.mod h1:v8dTdLbMG2kIc/vJvl+f65V22dbkXbowE6jgT/gNBxE=
+github.com/google/triemap v0.0.0-20200619014622-04f4574f648b h1:7oH2E3qePy/JQieJtfupulDmAcBhlH2DqziP8XrXgQs=
+github.com/google/triemap v0.0.0-20200619014622-04f4574f648b/go.mod h1:xN2oMJTEy2GmPVMyJN4ShecUtizo0UJ6XPQiXpup4m0=
+golang.org/x/xerrors v0.0.0-20191204190536-9bdfabe68543 h1:E7g+9GITq07hpfrRu66IVDexMakfv52eLZ2CXBWiKr4=
+golang.org/x/xerrors v0.0.0-20191204190536-9bdfabe68543/go.mod h1:I/5z698sn9Ka8TeJc9MKroUUfqBBauWjQqLJ2OPfmY0=
